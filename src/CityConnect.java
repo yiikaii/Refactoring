@@ -55,6 +55,7 @@ public class CityConnect {
 	private static final String ROUTE_ERROR_MESSAGE = "Route end points cannot be null";
 	private static final String NULL_STRING = null;
 	private static final boolean INTEGER_GREATER_THAN_ZERO = true;
+	private static final boolean INTEGER_LESSER_THAN_ZERO = false;
 	
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -327,7 +328,7 @@ public class CityConnect {
 		try {
 			int i = Integer.parseInt(s);
 			//return true if i is greater than 0
-			return (i > 0 ? true : false);
+			return (i > 0 ? INTEGER_GREATER_THAN_ZERO : INTEGER_LESSER_THAN_ZERO);
 		} catch (NumberFormatException nfe) {
 			return false;
 		}
