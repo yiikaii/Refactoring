@@ -54,6 +54,7 @@ public class CityConnect {
 	private static final String COMMAND_TYPE_ERROR_MESSAGE = "command type string cannot be null!";
 	private static final String ROUTE_ERROR_MESSAGE = "Route end points cannot be null";
 	private static final String NULL_STRING = null;
+	private static final boolean INTEGER_GREATER_THAN_ZERO = true;
 	
 	// These are the possible command types
 	enum COMMAND_TYPE {
