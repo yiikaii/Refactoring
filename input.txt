@@ -1,0 +1,8 @@
+addroute Clementi BuonaVista 12
+getdistance Clementi BuonaVista
+getdistance clementi buonavista
+getdistance Clementi JurongWest
+addroute Clementi JurongWest 24
+getdistance Clementi JurongWest
+getdistance clementi buonavista
+exit
