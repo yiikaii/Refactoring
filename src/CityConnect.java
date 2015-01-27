@@ -57,6 +57,7 @@ public class CityConnect {
 	private static final boolean INTEGER_GREATER_THAN_ZERO = true;
 	private static final boolean INTEGER_LESSER_THAN_ZERO = false;
 	private static final String EMPTY_STRING = "";
+	private static final String SPLIT_PARAMETER = "\\s+";
 	
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -340,12 +341,12 @@ public class CityConnect {
 	}
 
 	private static String getFirstWord(String userCommand) {
-		String commandTypeString = userCommand.trim().split("\\s+")[0];
+		String commandTypeString = userCommand.trim().split(SPLIT_PARAMETER)[0];
 		return commandTypeString;
 	}
 
 	private static String[] splitParameters(String commandParametersString) {
-		String[] parameters = commandParametersString.trim().split("\\s+");
+		String[] parameters = commandParametersString.trim().split(SPLIT_PARAMETER);
 		return parameters;
 	}
 }
