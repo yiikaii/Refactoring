@@ -51,6 +51,7 @@ public class CityConnect {
 	private static final String WELCOME_MESSAGE = "Welcome to SimpleRouteStore!";
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
 	private static final String PROMPT_MESSAGE = "Enter command:";
+	private static final String COMMAND_TYPE_ERROR_MESSAGE = "command type string cannot be null!";
 
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -168,7 +169,7 @@ public class CityConnect {
 	 */
 	private static COMMAND_TYPE determineCommandType(String commandTypeString) {
 		if (commandTypeString == null)
-			throw new Error("command type string cannot be null!");
+			throw new Error(COMMAND_TYPE_ERROR_MESSAGE);
 
 		if (commandTypeString.equalsIgnoreCase("addroute")) {
 			return COMMAND_TYPE.ADD_ROUTE;
