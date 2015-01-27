@@ -312,17 +312,17 @@ public class CityConnect {
 	/**
 	 * This operation checks if two routes represents the same route.
 	 */
-	private static boolean sameRoute(String startLocation1,
+	private static boolean sameRoute(String existingStartLocation,
 			String endLocation1, String startLocation2, String endLocation2) {
 
-		if ((startLocation1 == NULL_STRING) || (endLocation1 == NULL_STRING)
+		if ((existingStartLocation == NULL_STRING) || (endLocation1 == NULL_STRING)
 				&& (startLocation2 == NULL_STRING) || (endLocation2 == NULL_STRING)){
 			throw new Error(ROUTE_ERROR_MESSAGE);
 		}
 
-		return (startLocation1.equalsIgnoreCase(startLocation2) && endLocation1
+		return (existingStartLocation.equalsIgnoreCase(startLocation2) && endLocation1
 				.equalsIgnoreCase(endLocation2))
-				|| (startLocation1.equalsIgnoreCase(endLocation2) && endLocation1
+				|| (existingStartLocation.equalsIgnoreCase(endLocation2) && endLocation1
 						.equalsIgnoreCase(startLocation2));
 	}
 
