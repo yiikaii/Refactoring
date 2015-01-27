@@ -60,7 +60,7 @@ public class CityConnect {
 	private static final String SPLIT_PARAMETER = "\\s+";
 	
 	// These are the possible command types
-	enum COMMAND_TYPE {
+	private enum COMMAND_TYPE {
 		ADD_ROUTE, GET_DISTANCE, INVALID, EXIT
 	};
 
