@@ -52,7 +52,8 @@ public class CityConnect {
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
 	private static final String PROMPT_MESSAGE = "Enter command:";
 	private static final String COMMAND_TYPE_ERROR_MESSAGE = "command type string cannot be null!";
-
+	private static final String ROUTE_ERROR_MESSAGE = "Route end points cannot be null";
+	
 	// These are the possible command types
 	enum COMMAND_TYPE {
 		ADD_ROUTE, GET_DISTANCE, INVALID, EXIT
@@ -311,7 +312,7 @@ public class CityConnect {
 
 		if ((startLocation1 == null) || (endLocation1 == null)
 				&& (startLocation2 == null) || (endLocation2 == null)){
-			throw new Error("Route end points cannot be null");
+			throw new Error(ROUTE_ERROR_MESSAGE);
 		}
 
 		return (startLocation1.equalsIgnoreCase(startLocation2) && endLocation1
