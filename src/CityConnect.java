@@ -53,6 +53,7 @@ public class CityConnect {
 	private static final String PROMPT_MESSAGE = "Enter command:";
 	private static final String COMMAND_TYPE_ERROR_MESSAGE = "command type string cannot be null!";
 	private static final String ROUTE_ERROR_MESSAGE = "Route end points cannot be null";
+	private static final String NULL_STRING = null;
 	
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -169,7 +170,7 @@ public class CityConnect {
 	 *            is the first word of the user command
 	 */
 	private static COMMAND_TYPE determineCommandType(String commandTypeString) {
-		if (commandTypeString == null)
+		if (commandTypeString == NULL_STRING)
 			throw new Error(COMMAND_TYPE_ERROR_MESSAGE);
 
 		if (commandTypeString.equalsIgnoreCase("addroute")) {
@@ -226,7 +227,7 @@ public class CityConnect {
 			String existingStartLocation = routes[i][STORAGE_POSITION_START_LOCATION];
 			String existingEndLocation = routes[i][STORAGE_POSITION_END_LOCATION];
 
-			if (existingStartLocation == null) { //beginning of empty slots
+			if (existingStartLocation == NULL_STRING) { //beginning of empty slots
 				return NOT_FOUND; 
 			} else if (sameRoute(existingStartLocation, existingEndLocation,
 					newStartLocation, newEndLocation)) { 
@@ -294,7 +295,7 @@ public class CityConnect {
 			String existingStartLocation = routes[i][STORAGE_POSITION_START_LOCATION];
 			String existingEndLocation = routes[i][STORAGE_POSITION_END_LOCATION];
 
-			if (existingStartLocation == null) { // empty slot
+			if (existingStartLocation == NULL_STRING) { // empty slot
 				return i;
 			} else if (sameRoute(existingStartLocation, existingEndLocation,
 					newStartLocation, newEndLocation)) {
@@ -310,8 +311,8 @@ public class CityConnect {
 	private static boolean sameRoute(String startLocation1,
 			String endLocation1, String startLocation2, String endLocation2) {
 
-		if ((startLocation1 == null) || (endLocation1 == null)
-				&& (startLocation2 == null) || (endLocation2 == null)){
+		if ((startLocation1 == NULL_STRING) || (endLocation1 == NULL_STRING)
+				&& (startLocation2 == NULL_STRING) || (endLocation2 == NULL_STRING)){
 			throw new Error(ROUTE_ERROR_MESSAGE);
 		}
 
