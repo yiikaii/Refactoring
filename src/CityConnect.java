@@ -56,6 +56,7 @@ public class CityConnect {
 	private static final String NULL_STRING = null;
 	private static final boolean INTEGER_GREATER_THAN_ZERO = true;
 	private static final boolean INTEGER_LESSER_THAN_ZERO = false;
+	private static final String EMPTY_STRING = "";
 	
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -127,7 +128,7 @@ public class CityConnect {
 	}
 
 	public static String executeCommand(String userCommand) {
-		if (userCommand.trim().equals(""))
+		if (userCommand.trim().equals(EMPTY_STRING))
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 
 		String commandTypeString = getFirstWord(userCommand);
@@ -335,7 +336,7 @@ public class CityConnect {
 	}
 
 	private static String removeFirstWord(String userCommand) {
-		return userCommand.replace(getFirstWord(userCommand), "").trim();
+		return userCommand.replace(getFirstWord(userCommand), EMPTY_STRING).trim();
 	}
 
 	private static String getFirstWord(String userCommand) {
